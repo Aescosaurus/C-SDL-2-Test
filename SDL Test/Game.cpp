@@ -67,7 +67,8 @@ void Game::handleEvents()
 void Game::update()
 {
 	++count;
-	std::cout << count << std::endl;
+	// std::cout << count << std::endl;
+
 	dstRect.w = 64;
 	dstRect.h = 64;
 	dstRect.x = count;
