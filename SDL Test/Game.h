@@ -18,10 +18,11 @@ public:
 	void clean();
 
 	bool running() { return( isRunning ); }
+public:
+	static SDL_Renderer* renderer;
 private:
 	bool isRunning = false;
 	SDL_Window* window = nullptr;
-	SDL_Renderer* renderer = nullptr;
 	// ------------------------------------------------- //
 	int count = 0;
 };
