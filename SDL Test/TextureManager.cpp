@@ -9,3 +9,9 @@ SDL_Texture* TextureManager::LoadTexture( const char* path )
 	SDL_FreeSurface( tempSurface );
 	return( tex );
 }
+
+void TextureManager::Draw( SDL_Texture* tex,
+	SDL_Rect src,SDL_Rect dst )
+{
+	SDL_RenderCopy( Game::renderer,tex,&src,&dst );
+}
