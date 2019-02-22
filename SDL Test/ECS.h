@@ -48,9 +48,11 @@ public:
 	void update()
 	{
 		for( auto& c : components ) c->update();
+	}
+	void draw()
+	{
 		for( auto& c : components ) c->draw();
 	}
-	void draw() {}
 
 	void destroy() { active = false; }
 	template<typename T,typename... TArgs>
