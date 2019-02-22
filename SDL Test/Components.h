@@ -3,5 +3,5 @@
 #include "ECS.h"
 #include "GameObject.h"
 
-#include "PositionComponent.h"
+#include "TransformComponent.h"
 #include "SpriteComponent.h"
