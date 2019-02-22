@@ -20,8 +20,20 @@ public:
 		position.y = y;
 	}
 
+	void init() override
+	{
+		velocity.x = 0.0f;
+		velocity.y = 0.0f;
+	}
+
 	void update() override
-	{}
+	{
+		position.x += velocity.x * float( speed );
+		position.y += velocity.y * float( speed );
+	}
 public:
 	Vector2D position;
+	Vector2D velocity;
+
+	int speed = 3;
 };

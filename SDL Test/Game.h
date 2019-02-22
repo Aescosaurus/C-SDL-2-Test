@@ -20,6 +20,7 @@ public:
 	bool running() { return( isRunning ); }
 public:
 	static SDL_Renderer* renderer;
+	static SDL_Event evt;
 private:
 	bool isRunning = false;
 	SDL_Window* window = nullptr;

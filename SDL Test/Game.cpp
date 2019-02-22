@@ -7,6 +7,7 @@
 Map* map;
 
 SDL_Renderer* Game::renderer = nullptr;
+SDL_Event Game::evt;
 
 Manager manager;
 auto& player( manager.addEntity() );
@@ -57,11 +58,11 @@ void Game::init( const char* title,int xPos,int yPos,
 
 	player.addComponent<TransformComponent>();
 	player.addComponent<SpriteComponent>( "Images/Player.png" );
+	player.addComponent<KeyboardController>();
 }
 
 void Game::handleEvents()
 {
-	SDL_Event evt;
 	SDL_PollEvent( &evt );
 
 	switch( evt.type )
@@ -76,9 +77,6 @@ void Game::update()
 {
 	manager.refresh();
 	manager.update();
-
-	player.getComponent<TransformComponent>()
-		.position.Add( Vector2D{ 5.0f,0.0f } );
 }
 
 void Game::render()
